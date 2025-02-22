@@ -9,9 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<!-- Matrix-style falling lyrics -->
-<div id="matrix-lyrics"></div>
-
 <!-- Music Player Container -->
 <div class="container">
   <!-- Sidebar for Playlists -->
@@ -48,23 +45,25 @@
       </div>
     </div>
   </div>
-</div>
 
-<!-- Playlist Popup Modal -->
-<div id="playlist-popup" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="popup-title">Playlist</h2>
-    <div id="playlist-songs">
+  <!-- Lyrics Section -->
+  <div id="lyrics-section" class="lyrics-section">
+    <h3>Lyrics</h3>
+    <div id="lyrics"></div>
+  </div>
+
+  <!-- Playlist Sidebar -->
+  <div id="playlist-sidebar" class="playlist-sidebar">
+    <span class="close-sidebar" onclick="closePlaylistSidebar()">&times;</span>
+    <h2 id="playlist-sidebar-title">Playlist</h2>
+    <div id="playlist-sidebar-songs">
       <!-- Songs will be dynamically added here -->
     </div>
   </div>
-</div>
 
-<!-- Create Playlist Modal -->
-<div id="playlist-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
+  <!-- Create Playlist Sidebar -->
+  <div id="create-playlist-sidebar" class="create-playlist-sidebar">
+    <span class="close-sidebar" onclick="closeCreatePlaylistSidebar()">&times;</span>
     <h2>Create Playlist</h2>
     <input type="text" id="playlist-name" placeholder="Playlist Name">
     <h3>Select Songs</h3>
