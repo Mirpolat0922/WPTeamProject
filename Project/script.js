@@ -1,170 +1,194 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const playlistElement = document.getElementById('playlist');
-  const trackImage = document.getElementById('track-image');
-  const trackName = document.getElementById('track-name');
-  const artistName = document.getElementById('artist-name');
-  const playPauseBtn = document.getElementById('play-pause');
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
-  const shuffleBtn = document.getElementById('shuffle');
-  const repeatBtn = document.getElementById('repeat');
-  const progress = document.getElementById('progress');
-  const lyricsDisplay = document.getElementById('lyrics');
-  const likeBtn = document.getElementById('like-btn');
-  const currentTimeDisplay = document.getElementById('current-time');
-  const totalTimeDisplay = document.getElementById('total-time');
-  const homeBtn = document.getElementById('home-btn');
-  const favoritesBtn = document.getElementById('favorites-btn');
+const musicList = [];
+for (let i = 1; i <= 20; i++) {
+  musicList.push({
+    title: `Music ${i}`,
+    artist: `Artist ${i}`,
+    file: `musics/music${i}.mp3`,
+    cover: `musics/picture${i}.jpg`,
+    lyrics: `musics/subtitle${i}.txt`,
+  });
+}
 
-  let tracks = [];
-  let currentTrackIndex = 0;
-  let audio = new Audio();
-  let isShuffle = false;
-  let isRepeat = false;
-  let favorites = [];
+let currentMusicIndex = 0;
+let isPlaying = false;
+let audio = new Audio(musicList[currentMusicIndex].file);
+let playlists = [
+  { name: "All Music", songs: [...musicList] },
+  { name: "Favourites", songs: [] },
+];
+let currentPlaylist = playlists[0];
 
-  // Load tracks from the musics folder
-  for (let i = 1; i <= 20; i++) {
-    tracks.push({
-      name: `Music ${i}`,
-      url: `musics/music${i}.mp3`,
-      image: `musics/picture${i}.jpg`,
-      lyrics: `musics/subtitle${i}.txt`,
-      isLiked: false, // Track like status
+// DOM Elements
+const albumArt = document.getElementById("album-art");
+const musicTitle = document.getElementById("music-title");
+const artistName = document.getElementById("artist-name");
+const playPauseBtn = document.getElementById("play-pause");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const likeBtn = document.getElementById("like");
+const progress = document.getElementById("progress");
+const currentTime = document.getElementById("current-time");
+const duration = document.getElementById("duration");
+const lyricsContainer = document.getElementById("lyrics");
+const playlistsContainer = document.getElementById("playlists");
+const playlistPopup = document.getElementById("playlist-popup");
+const popupTitle = document.getElementById("popup-title");
+const playlistSongs = document.getElementById("playlist-songs");
+const playlistModal = document.getElementById("playlist-modal");
+const playlistNameInput = document.getElementById("playlist-name");
+const songSelection = document.getElementById("song-selection");
+const doneBtn = document.getElementById("done");
+
+// Load Music
+function loadMusic(index) {
+  const music = currentPlaylist.songs[index];
+  audio.src = music.file;
+  albumArt.src = music.cover;
+  musicTitle.textContent = music.title;
+  artistName.textContent = music.artist;
+  fetch(music.lyrics)
+    .then(response => response.text())
+    .then(data => {
+      lyricsContainer.innerHTML = data.split("\n").map(line => `<p>${line}</p>`).join("");
     });
+  updateLikeButton();
+}
+
+// Update Like Button
+function updateLikeButton() {
+  const isFavourite = playlists[1].songs.includes(currentPlaylist.songs[currentMusicIndex]);
+  likeBtn.classList.toggle("liked", isFavourite);
+}
+
+// Play/Pause Music
+function togglePlayPause() {
+  if (isPlaying) {
+    audio.pause();
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+  } else {
+    audio.play();
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
   }
+  isPlaying = !isPlaying;
+}
 
-  // Display playlist
-  function displayPlaylist(filteredTracks = tracks) {
-    playlistElement.innerHTML = filteredTracks.map((track, index) => `
-            <div class="track" data-index="${tracks.indexOf(track)}">
-                <img src="${track.image}" alt="${track.name}">
-                <p>${track.name}</p>
-            </div>
-        `).join('');
-    playlistElement.querySelectorAll('.track').forEach(track => {
-      track.addEventListener('click', function () {
-        currentTrackIndex = parseInt(this.getAttribute('data-index'));
-        playTrack(currentTrackIndex);
-      });
-    });
+// Update Progress Bar
+function updateProgress() {
+  progress.value = (audio.currentTime / audio.duration) * 100;
+  currentTime.textContent = formatTime(audio.currentTime);
+  duration.textContent = formatTime(audio.duration);
+}
+
+// Format Time
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+// Seek Music
+function seekMusic() {
+  audio.currentTime = (progress.value * audio.duration) / 100;
+}
+
+// Next Music
+function nextMusic() {
+  currentMusicIndex = (currentMusicIndex + 1) % currentPlaylist.songs.length;
+  loadMusic(currentMusicIndex);
+  if (isPlaying) audio.play();
+}
+
+// Previous Music
+function prevMusic() {
+  currentMusicIndex = (currentMusicIndex - 1 + currentPlaylist.songs.length) % currentPlaylist.songs.length;
+  loadMusic(currentMusicIndex);
+  if (isPlaying) audio.play();
+}
+
+// Like Music
+function likeMusic() {
+  const song = currentPlaylist.songs[currentMusicIndex];
+  const favourites = playlists[1].songs;
+  if (favourites.includes(song)) {
+    favourites.splice(favourites.indexOf(song), 1);
+  } else {
+    favourites.push(song);
   }
+  updateLikeButton();
+}
 
-  // Play track
-  function playTrack(index) {
-    if (index >= 0 && index < tracks.length) {
-      audio.src = tracks[index].url;
-      audio.play();
-      trackImage.src = tracks[index].image;
-      trackName.textContent = tracks[index].name;
-      artistName.textContent = "Artist";
-      playPauseBtn.textContent = '❚❚';
-      fetchLyrics(tracks[index].lyrics);
-      updateLikeButton(tracks[index].isLiked);
-    }
-  }
+// Switch Playlist
+function switchPlaylist(playlist) {
+  currentPlaylist = playlist;
+  currentMusicIndex = 0;
+  loadMusic(currentMusicIndex);
+}
 
-  // Fetch lyrics
-  function fetchLyrics(lyricsUrl) {
-    fetch(lyricsUrl)
-      .then(response => response.text())
-      .then(text => {
-        lyricsDisplay.textContent = text;
-      })
-      .catch(() => {
-        lyricsDisplay.textContent = 'No lyrics available for this track.';
-      });
-  }
+// Open Playlist Popup
+function openPlaylistPopup(playlist) {
+  popupTitle.textContent = playlist.name;
+  playlistSongs.innerHTML = playlist.songs
+    .map((song, index) => `
+      <div onclick="playSongFromPopup(${index})">
+        <img src="${song.cover}" alt="${song.title}" width="50">
+        <span>${song.title}</span>
+      </div>
+    `)
+    .join("");
+  playlistPopup.style.display = "flex";
+}
 
-  // Update like button state
-  function updateLikeButton(isLiked) {
-    likeBtn.classList.toggle('selected', isLiked);
-  }
+// Play Song from Popup
+function playSongFromPopup(index) {
+  currentMusicIndex = index;
+  loadMusic(currentMusicIndex);
+  if (isPlaying) audio.play();
+  playlistPopup.style.display = "none";
+}
 
-  // Like button functionality
-  likeBtn.addEventListener('click', function () {
-    const currentTrack = tracks[currentTrackIndex];
-    currentTrack.isLiked = !currentTrack.isLiked;
-    updateLikeButton(currentTrack.isLiked);
+// Create Playlist
+function createPlaylist() {
+  const name = playlistNameInput.value.trim();
+  if (!name) return;
+  const selectedSongs = Array.from(songSelection.querySelectorAll("input:checked")).map(input => musicList[input.value]);
+  playlists.push({ name, songs: selectedSongs });
+  renderPlaylists();
+  closeModal();
+}
 
-    if (currentTrack.isLiked) {
-      favorites.push(currentTrack);
-    } else {
-      favorites = favorites.filter(track => track !== currentTrack);
-    }
-  });
+// Render Playlists
+function renderPlaylists() {
+  playlistsContainer.innerHTML = playlists
+    .map((playlist, index) => `<li data-playlist="${index}" onclick="openPlaylistPopup(playlists[${index}])">${playlist.name}</li>`)
+    .join("");
+}
 
-  // Home button functionality
-  homeBtn.addEventListener('click', function () {
-    displayPlaylist();
-    homeBtn.classList.add('active');
-    favoritesBtn.classList.remove('active');
-  });
+// Open Modal
+function openModal() {
+  playlistModal.style.display = "flex";
+  songSelection.innerHTML = musicList
+    .map((music, index) => `<div><input type="checkbox" value="${index}"> ${music.title}</div>`)
+    .join("");
+}
 
-  // Favorites button functionality
-  favoritesBtn.addEventListener('click', function () {
-    displayPlaylist(favorites);
-    favoritesBtn.classList.add('active');
-    homeBtn.classList.remove('active');
-  });
+// Close Modal
+function closeModal() {
+  playlistModal.style.display = "none";
+  playlistPopup.style.display = "none";
+}
 
-  // Play/Pause button
-  playPauseBtn.addEventListener('click', function () {
-    if (audio.paused) {
-      audio.play();
-      this.textContent = '❚❚';
-    } else {
-      audio.pause();
-      this.textContent = '►';
-    }
-  });
+// Event Listeners
+playPauseBtn.addEventListener("click", togglePlayPause);
+prevBtn.addEventListener("click", prevMusic);
+nextBtn.addEventListener("click", nextMusic);
+likeBtn.addEventListener("click", likeMusic);
+progress.addEventListener("input", seekMusic);
+audio.addEventListener("timeupdate", updateProgress);
+audio.addEventListener("ended", nextMusic);
+document.getElementById("create-playlist").addEventListener("click", openModal);
+doneBtn.addEventListener("click", createPlaylist);
+document.querySelectorAll(".close").forEach(btn => btn.addEventListener("click", closeModal));
 
-  // Next track
-  nextBtn.addEventListener('click', function () {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-    playTrack(currentTrackIndex);
-  });
-
-  // Previous track
-  prevBtn.addEventListener('click', function () {
-    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-    playTrack(currentTrackIndex);
-  });
-
-  // Shuffle button
-  shuffleBtn.addEventListener('click', function () {
-    isShuffle = !isShuffle;
-    this.style.backgroundColor = isShuffle ? '#4CAF50' : '';
-  });
-
-  // Repeat button
-  repeatBtn.addEventListener('click', function () {
-    isRepeat = !isRepeat;
-    this.style.backgroundColor = isRepeat ? '#4CAF50' : '';
-  });
-
-  // Update progress and time display
-  audio.addEventListener('timeupdate', function () {
-    const currentTime = formatTime(audio.currentTime);
-    const totalTime = formatTime(audio.duration);
-    currentTimeDisplay.textContent = currentTime;
-    totalTimeDisplay.textContent = totalTime;
-    progress.value = (audio.currentTime / audio.duration) * 100;
-  });
-
-  // Seek functionality
-  progress.addEventListener('input', function () {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  });
-
-  // Format time (MM:SS)
-  function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  }
-
-  // Initialize
-  displayPlaylist();
-  playTrack(0);
-});
+// Load First Music
+loadMusic(currentMusicIndex);
+renderPlaylists();
