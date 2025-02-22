@@ -3,51 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotify-like Music Player</title>
+  <title>Play & Enjoy</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="container">
-  <!-- Sidebar -->
+  <!-- Sidebar for Playlists -->
   <div class="sidebar">
-    <h1>Music Player</h1>
-    <ul>
-      <li><a href="#" id="home-btn" class="active">Home</a></li>
-      <li><a href="#" id="favorites-btn">Favorites</a></li>
+    <h2>Playlists</h2>
+    <ul id="playlists">
+      <li data-playlist="all">All Music</li>
+      <li data-playlist="favourites">Favourites</li>
+      <!-- Custom playlists will be added here -->
     </ul>
+    <button id="create-playlist">Create Playlist</button>
   </div>
 
   <!-- Main Content -->
-  <div class="main-content">
-    <!-- Lyrics Section -->
-    <div class="lyrics-container">
-      <div class="lyrics" id="lyrics"></div>
-    </div>
-
-    <!-- Playlist -->
-    <div class="playlist" id="playlist"></div>
-  </div>
-
-  <!-- Music Player -->
-  <div class="music-player">
-    <div class="controls">
-      <button id="shuffle">🔀</button>
-      <button id="prev">&#9664;</button>
-      <button id="play-pause">&#9658;</button>
-      <button id="next">&#9654;</button>
-      <button id="repeat">🔁</button>
-      <div class="time-display">
-        <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+  <div class="main">
+    <div class="music-player">
+      <div class="album-art">
+        <img id="album-art" src="musics/picture1.jpg" alt="Album Art">
+      </div>
+      <div class="music-info">
+        <h2 id="music-title">Music Title</h2>
+        <p id="artist-name">Artist Name</p>
+      </div>
+      <div class="controls">
+        <button id="prev"><i class="fas fa-backward"></i></button>
+        <button id="play-pause"><i class="fas fa-play"></i></button>
+        <button id="next"><i class="fas fa-forward"></i></button>
+        <button id="like"><i class="far fa-heart"></i></button>
+      </div>
+      <div class="progress-container">
+        <input type="range" id="progress" value="0">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
       </div>
     </div>
-    <div class="progress-container">
-      <input type="range" id="progress" value="0">
-    </div>
-    <div class="extra-controls">
-      <button id="like-btn">❤️</button>
+    <div class="lyrics-container">
+      <h3>Lyrics</h3>
+      <div id="lyrics"></div>
     </div>
   </div>
 </div>
+
+<!-- Playlist Popup Modal -->
+<div id="playlist-popup" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="popup-title">Playlist</h2>
+    <div id="playlist-songs">
+      <!-- Songs will be dynamically added here -->
+    </div>
+  </div>
+</div>
+
+<!-- Create Playlist Modal -->
+<div id="playlist-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create Playlist</h2>
+    <input type="text" id="playlist-name" placeholder="Playlist Name">
+    <h3>Select Songs</h3>
+    <div id="song-selection">
+      <!-- Songs will be dynamically added here -->
+    </div>
+    <button id="done">Done</button>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
