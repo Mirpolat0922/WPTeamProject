@@ -30,13 +30,13 @@ const progress = document.getElementById("progress");
 const currentTime = document.getElementById("current-time");
 const duration = document.getElementById("duration");
 const playlistsContainer = document.getElementById("playlists");
-const playlistPopup = document.getElementById("playlist-popup");
-const popupTitle = document.getElementById("popup-title");
-const playlistSongs = document.getElementById("playlist-songs");
-const playlistModal = document.getElementById("playlist-modal");
-const playlistNameInput = document.getElementById("playlist-name");
+const playlistSidebar = document.getElementById("playlist-sidebar");
+const playlistSidebarSongs = document.getElementById("playlist-sidebar-songs");
+const createPlaylistSidebar = document.getElementById("create-playlist-sidebar");
 const songSelection = document.getElementById("song-selection");
 const doneBtn = document.getElementById("done");
+const lyricsSection = document.getElementById("lyrics-section");
+const lyrics = document.getElementById("lyrics");
 
 // Load Music
 function loadMusic(index) {
@@ -54,44 +54,22 @@ function loadMusic(index) {
       const lines = data.split("\n");
       const title = lines[0].trim(); // First line is the title
       const artist = lines[1].trim(); // Second line is the artist
-      const lyrics = lines.slice(2).join(" "); // Lines from 3 onwards are lyrics
+      const lyricsText = lines.slice(2).join("<br>"); // Lines from 3 onwards are lyrics
 
       // Update DOM elements
       musicTitle.textContent = title;
       artistName.textContent = artist;
-
-      // Start Matrix-style falling lyrics
-      startMatrixLyrics(lyrics);
+      lyrics.innerHTML = lyricsText; // Display lyrics in the lyrics section
     })
     .catch((error) => {
       console.error("Error loading lyrics:", error);
       musicTitle.textContent = music.title; // Fallback to default title
       artistName.textContent = music.artist; // Fallback to default artist
+      lyrics.innerHTML = "<p>No lyrics available.</p>"; // Fallback for lyrics
     });
 
   updateLikeButton();
   if (isPlaying) audio.play();
-}
-
-// Matrix-style falling lyrics
-function startMatrixLyrics(lyrics) {
-  const matrixContainer = document.getElementById("matrix-lyrics");
-  matrixContainer.innerHTML = ""; // Clear previous lyrics
-
-  const words = lyrics.split(" ");
-  words.forEach((word) => {
-    const text = document.createElement("div");
-    text.className = "matrix-text";
-    text.textContent = word;
-    text.style.left = `${Math.random() * 100}%`;
-    text.style.animationDuration = `${Math.random() * 5 + 5}s`;
-    matrixContainer.appendChild(text);
-
-    // Remove text after animation ends
-    setTimeout(() => {
-      text.remove();
-    }, 10000);
-  });
 }
 
 // Update Like Button
@@ -159,27 +137,50 @@ function likeMusic() {
   updateLikeButton();
 }
 
-// Open Playlist Popup
-function openPlaylistPopup(playlist) {
-  popupTitle.textContent = playlist.name;
-  playlistSongs.innerHTML = playlist.songs
+// Open Playlist Sidebar
+function openPlaylistSidebar(playlist) {
+  playlistSidebarSongs.innerHTML = playlist.songs
     .map(
       (song, index) => `
-      <div onclick="playSongFromPopup(${index})">
+      <div onclick="playSongFromSidebar(${index})">
         <img src="${song.cover}" alt="${song.title}" width="50">
         <span>${song.title}</span>
       </div>
     `
     )
     .join("");
-  playlistPopup.style.display = "flex";
+  playlistSidebar.classList.add("open");
 }
 
-// Play Song from Popup
-function playSongFromPopup(index) {
+// Close Playlist Sidebar
+function closePlaylistSidebar() {
+  playlistSidebar.classList.remove("open");
+}
+
+// Play Song from Sidebar
+function playSongFromSidebar(index) {
   currentMusicIndex = index;
   loadMusic(currentMusicIndex);
-  playlistPopup.style.display = "none";
+  closePlaylistSidebar();
+}
+
+// Open Create Playlist Sidebar
+function openCreatePlaylistSidebar() {
+  songSelection.innerHTML = musicList
+    .map(
+      (music, index) => `
+      <div>
+        <input type="checkbox" value="${index}"> ${music.title}
+      </div>
+    `
+    )
+    .join("");
+  createPlaylistSidebar.classList.add("open");
+}
+
+// Close Create Playlist Sidebar
+function closeCreatePlaylistSidebar() {
+  createPlaylistSidebar.classList.remove("open");
 }
 
 // Create Playlist
@@ -191,7 +192,7 @@ function createPlaylist() {
   ).map((input) => musicList[input.value]);
   playlists.push({ name, songs: selectedSongs });
   renderPlaylists();
-  closeModal();
+  closeCreatePlaylistSidebar();
 }
 
 // Render Playlists
@@ -199,32 +200,12 @@ function renderPlaylists() {
   playlistsContainer.innerHTML = playlists
     .map(
       (playlist, index) => `
-      <li data-playlist="${index}" onclick="openPlaylistPopup(playlists[${index}])">
+      <li data-playlist="${index}" onclick="openPlaylistSidebar(playlists[${index}])">
         ${playlist.name}
       </li>
     `
     )
     .join("");
-}
-
-// Open Modal
-function openModal() {
-  playlistModal.style.display = "flex";
-  songSelection.innerHTML = musicList
-    .map(
-      (music, index) => `
-      <div>
-        <input type="checkbox" value="${index}"> ${music.title}
-      </div>
-    `
-    )
-    .join("");
-}
-
-// Close Modal
-function closeModal() {
-  playlistModal.style.display = "none";
-  playlistPopup.style.display = "none";
 }
 
 // Event Listeners
@@ -237,11 +218,15 @@ audio.addEventListener("timeupdate", updateProgress);
 audio.addEventListener("ended", nextMusic);
 document
   .getElementById("create-playlist")
-  .addEventListener("click", openModal);
+  .addEventListener("click", openCreatePlaylistSidebar);
 doneBtn.addEventListener("click", createPlaylist);
-document.querySelectorAll(".close").forEach((btn) =>
-  btn.addEventListener("click", closeModal)
-);
+
+// Close sidebar when clicking outside
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".playlist-sidebar") && !event.target.closest(".sidebar")) {
+    closePlaylistSidebar();
+  }
+});
 
 // Load First Music
 loadMusic(currentMusicIndex);
