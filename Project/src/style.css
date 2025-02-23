@@ -174,10 +174,10 @@ body {
 .lyrics-section {
   width: 40%; /* Take up the right side */
   height: 100vh;
-  background: rgba(24, 24, 24, 0.9);
   padding: 20px;
   overflow-y: auto;
   border-left: 1px solid #333;
+  background-image: url('../img/lyricsPicture.webp');
 }
 
 .lyrics-section h3 {
@@ -239,3 +239,38 @@ body {
 .create-playlist-sidebar.open {
   right: 0; /* Show sidebar */
 }
+
+.sound-wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.05); /* Just to see the area */
+}
+
+/* Default style for wave bars */
+.sound-wave span {
+  display: block;
+  width: 8px;
+  height: 10px;
+  background: #1DB954; /* Spotify Green */
+  opacity: 1; /* Always visible */
+  transition: height 0.2s ease-in-out;
+}
+
+/* Only animate when music is playing */
+.sound-wave.playing span {
+  animation: waveAnimation 1s infinite ease-in-out;
+}
+
+@keyframes waveAnimation {
+  0%, 100% { height: 10px; }
+  50% { height: 30px; }
+}
+
+
+
+
+

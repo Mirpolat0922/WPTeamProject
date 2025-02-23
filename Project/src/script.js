@@ -3,9 +3,9 @@ for (let i = 1; i <= 20; i++) {
   musicList.push({
     title: `Music ${i}`,
     artist: `Artist ${i}`,
-    file: `musics/music${i}.mp3`, // Ensure this path is correct
-    cover: `musics/picture${i}.jpg`, // Ensure this path is correct
-    lyrics: `musics/subtitle${i}.txt`, // Ensure this path is correct
+    file: `../musics/music${i}.mp3`, // Ensure this path is correct
+    cover: `../musics/picture${i}.jpg`, // Ensure this path is correct
+    lyrics: `../musics/subtitle${i}.txt`, // Ensure this path is correct
   });
 }
 
@@ -182,6 +182,8 @@ function openCreatePlaylistSidebar() {
 function closeCreatePlaylistSidebar() {
   createPlaylistSidebar.classList.remove("open");
 }
+const playlistNameInput = document.getElementById("Spotify"); // Ensure the correct ID
+
 
 // Create Playlist
 function createPlaylist() {
@@ -227,6 +229,55 @@ document.addEventListener("click", (event) => {
     closePlaylistSidebar();
   }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Ensure waveContainer exists
+  const audio = new Audio();
+  const waveContainer = document.querySelector('.sound-wave');
+
+  if (waveContainer) {
+    // Generate 20 bars dynamically
+    for (let i = 0; i < 20; i++) {
+      let span = document.createElement('span');
+      span.style.animation = `waveAnimation ${0.5 + Math.random()}s infinite ease-in-out`;
+      span.style.animationPlayState = 'paused'; // Start in paused state
+      waveContainer.appendChild(span);
+    }
+
+    const waveBars = document.querySelectorAll('.sound-wave span');
+
+    // Function to start animation when music plays
+    function startWave() {
+      waveBars.forEach(bar => {
+        bar.style.animationPlayState = "running"; // Start animation
+        bar.style.opacity = "1"; // Show waves
+      });
+    }
+
+    // Function to stop animation when music pauses or ends
+    function stopWave() {
+      waveBars.forEach(bar => {
+        bar.style.animationPlayState = "paused"; // Stop animation
+        bar.style.opacity = "0.5"; // Dim waves when paused
+      });
+    }
+
+    // Attach event listeners to the global `audio` object
+    audio.addEventListener('playing', startWave);
+    audio.addEventListener('pause', stopWave);
+    audio.addEventListener('ended', stopWave);
+  }
+
+});
+
+
+
+
+
+
+
 
 // Load First Music
 loadMusic(currentMusicIndex);
