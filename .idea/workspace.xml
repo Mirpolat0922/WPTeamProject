@@ -4,13 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa716639-ed75-40c6-bb38-eaadf3bf628f" name="Changes" comment="" />
+    <list default="true" id="fa716639-ed75-40c6-bb38-eaadf3bf628f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/picture9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/picture9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/musics/subtitle9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/musics/subtitle9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -39,9 +90,8 @@
     "JavaScript Debug.index.html.executor": "Run",
     "Node.js.script.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mirpolat/Desktop/WPTeamProject",
+    "last_opened_file_path": "/Users/mirpolat/Desktop/WPTeamProject/Project/musics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,9 +101,27 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project/musics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Project/img" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WPTeamProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WPTeamProject" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -72,6 +140,9 @@
       <option name="presentableId" value="Default" />
       <updated>1740244807320</updated>
       <workItem from="1740244808559" duration="29910000" />
+      <workItem from="1740404984626" duration="16000" />
+      <workItem from="1740405999604" duration="56000" />
+      <workItem from="1740406058214" duration="98000" />
     </task>
     <servers />
   </component>
