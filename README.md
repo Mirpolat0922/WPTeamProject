@@ -32,24 +32,29 @@ To run the project, simply open `index.html` in a web browser.
 ## Project Structure
 
 ### Root Directory
-- `.gitignore`: Specifies files and directories to be ignored by Git.
-- `index.html`: The main HTML file for the application.
-- `style.css`: Stylesheet for the application.
-- `script.js`: JavaScript functionality for the music player.
 
-### Assets Directory (`assets`)
-- `assets/images/`: Contains images and album art.
-- `assets/music/`: Contains sample music files.
+- `.idea/` - Project settings (IDE-related).
+- `.gitignore` - Specifies files and directories to be ignored by Git.
+- `README.md` - Project documentation.
 
-### Source Directory (`src`)
-- `src/utils.js`: Utility functions for the application.
+### Project Directory (`Project/`)
 
-#### Components Directory
-Contains reusable components:
-- `src/components/PlayerControls/`: Contains Play, Pause, Next, and Previous button components.
-- `src/components/Playlist/`: Contains Playlist component and its styles.
-- `src/components/Favorites/`: Contains Favorites component and its styles.
-- `src/components/Lyrics/`: Contains Lyrics display component and its styles.
+Contains all the main project files.  
+- `404.html` - Custom 404 error page.
+
+### Image Directory (`Project/img/`)
+
+- Stores image assets used in the project.
+
+### Music Directory (`Project/musics/`)
+
+- Contains audio files used in the project.
+
+### Source Directory (`Project/src/`)
+
+- `index.html` - The main HTML file for the application.
+- `style.css` - Stylesheet for the application.
+- `script.js` - JavaScript functionality for the application.
 
 ## Features
 
@@ -57,7 +62,6 @@ Contains reusable components:
 - **Dynamic Playlist Management**: Create and manage playlists.
 - **Favorite Songs**: Mark songs as favorites.
 - **Lyrics Display**: View lyrics alongside the music player.
-- **Responsive Design**: Adapts to different screen sizes.
 
 ## How It Works
 
@@ -73,7 +77,8 @@ This project is open-source and free to use.
 
 ## Contributors
 
-- **Mirpo'lat Erkinov** - Developer
-
-Feel free to contribute by submitting a pull request!
-
+- **Mirpo'lat Erkinov** - Project Manager
+- **Saidjon Akramjonov** - Frontend Developer
+- **Jahongir To'lqinboyev** - UI/UX Designer
+- **Sevinch Anvarova** - Content Creator
+- **Iskandarbek Xakimov** -  Quality Assurance (QA) Engineer
