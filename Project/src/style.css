@@ -244,7 +244,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
   margin-top: 20px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.05); /* Just to see the area */
@@ -253,8 +253,8 @@ body {
 /* Default style for wave bars */
 .sound-wave span {
   display: block;
-  width: 8px;
-  height: 10px;
+  width: 5px;
+  height: 15px;
   background: #1DB954; /* Spotify Green */
   opacity: 1; /* Always visible */
   transition: height 0.2s ease-in-out;

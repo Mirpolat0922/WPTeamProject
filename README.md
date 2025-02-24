@@ -1,71 +1,79 @@
-# Getting Started with Create React App
+# Music Player App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+To install and set up the project, follow these steps:
 
-In the project directory, you can run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mirpolat0922/WPTeamProject.git
+   ```
 
-### `npm start`
+2. Navigate to the project directory:
+   ```bash
+   cd Project
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the project, simply open `index.html` in a web browser.
 
-### `npm test`
+## Tech Stack Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- **HTML**: Structure of the web application.
+- **CSS**: Styling and layout of the application.
+- **JavaScript**: Interactive features and functionality.
 
-### `npm run build`
+### Libraries & APIs
+- **Font Awesome**: Icons for UI elements.
+- **Google Font**: Poppins for typography.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Root Directory
+- `.gitignore`: Specifies files and directories to be ignored by Git.
+- `index.html`: The main HTML file for the application.
+- `style.css`: Stylesheet for the application.
+- `script.js`: JavaScript functionality for the music player.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Assets Directory (`assets`)
+- `assets/images/`: Contains images and album art.
+- `assets/music/`: Contains sample music files.
 
-### `npm run eject`
+### Source Directory (`src`)
+- `src/utils.js`: Utility functions for the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Components Directory
+Contains reusable components:
+- `src/components/PlayerControls/`: Contains Play, Pause, Next, and Previous button components.
+- `src/components/Playlist/`: Contains Playlist component and its styles.
+- `src/components/Favorites/`: Contains Favorites component and its styles.
+- `src/components/Lyrics/`: Contains Lyrics display component and its styles.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Music Playback Controls**: Play, pause, next, and previous buttons.
+- **Dynamic Playlist Management**: Create and manage playlists.
+- **Favorite Songs**: Mark songs as favorites.
+- **Lyrics Display**: View lyrics alongside the music player.
+- **Responsive Design**: Adapts to different screen sizes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How It Works
 
-## Learn More
+1. The user can select music from the playlist and play it.
+2. The music player displays album art, song title, and artist name.
+3. Users can navigate between tracks using playback controls.
+4. The lyrics section displays the lyrics of the current song.
+5. Users can create custom playlists and add songs to them.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is open-source and free to use.
 
-### Code Splitting
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Mirpo'lat Erkinov** - Developer
 
-### Analyzing the Bundle Size
+Feel free to contribute by submitting a pull request!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# WPTeamProject

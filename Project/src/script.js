@@ -115,6 +115,9 @@ function seekMusic() {
 function nextMusic() {
   currentMusicIndex = (currentMusicIndex + 1) % currentPlaylist.songs.length;
   loadMusic(currentMusicIndex);
+
+  albumArt.src = currentPlaylist.songs[currentMusicIndex].cover;
+
 }
 
 // Previous Music
@@ -123,6 +126,9 @@ function prevMusic() {
     (currentMusicIndex - 1 + currentPlaylist.songs.length) %
     currentPlaylist.songs.length;
   loadMusic(currentMusicIndex);
+
+  albumArt.src = currentPlaylist.songs[currentMusicIndex].cover;
+
 }
 
 // Like Music
@@ -237,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (waveContainer) {
     // Generate 20 bars dynamically
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       let span = document.createElement('span');
       span.style.animation = `waveAnimation ${0.5 + Math.random()}s infinite ease-in-out`;
       span.style.animationPlayState = 'paused'; // Start in paused state
