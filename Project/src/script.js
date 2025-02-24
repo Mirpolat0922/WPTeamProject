@@ -233,8 +233,6 @@ document.addEventListener("click", (event) => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Ensure waveContainer exists
-  const audio = new Audio();
   const waveContainer = document.querySelector('.sound-wave');
 
   if (waveContainer) {
@@ -265,12 +263,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Attach event listeners to the global `audio` object
-    audio.addEventListener('playing', startWave);
+    audio.addEventListener('play', startWave);
     audio.addEventListener('pause', stopWave);
     audio.addEventListener('ended', stopWave);
   }
-
 });
+
 
 
 
