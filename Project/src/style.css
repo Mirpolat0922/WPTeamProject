@@ -160,22 +160,31 @@ body {
 .progress-container {
   width: 100%;
   margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between elements */
 }
 
 #progress {
-  width: 100%;
+  width: 75%;
   cursor: pointer;
   transition: opacity 0.3s;
+  flex-grow: 1;
 }
 
 #progress:hover {
   opacity: 0.8;
 }
 
-#current-time,
+#current-time{
+  font-size: 1rem; /* Smaller time text */
+  color: #b3b3b3;
+  margin-right: 10px;
+}
 #duration {
   font-size: 1rem; /* Smaller time text */
   color: #b3b3b3;
+  margin-left: 10px;
 }
 
 /* Lyrics Section */
