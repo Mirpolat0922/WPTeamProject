@@ -44,6 +44,13 @@ const doneBtn = document.getElementById("done");
 const lyricsSection = document.getElementById("lyrics-section");
 const lyrics = document.getElementById("lyrics");
 
+// Add Glowing Border Effect
+const container = document.querySelector(".container");
+const glowingBorder = document.createElement("div");
+glowingBorder.classList.add("glowing-border");
+container.appendChild(glowingBorder);
+
+
 // Load Music
 function loadMusic(index) {
   const music = currentPlaylist.songs[index];
@@ -106,11 +113,11 @@ function updateProgress() {
 }
 
 // Format Time
-  function formatTime(time) {
-    if (isNaN(time) || time < 0) return "0:00";
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+function formatTime(time) {
+  if (isNaN(time) || time < 0) return "0:00";
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
 //highlight
