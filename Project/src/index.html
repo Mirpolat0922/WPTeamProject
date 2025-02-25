@@ -8,13 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
 <!-- Music Player Container -->
 <div class="container">
   <!-- Sidebar for Playlists -->
   <div class="sidebar">
-
     <h2>Playlists</h2>
     <ul id="playlists">
       <li data-playlist="all">All Music</li>
@@ -28,16 +26,18 @@
   <div class="main">
     <div class="music-player">
       <div class="album-art">
-        <img id="album-art" src="../musics/picture1.jpg" alt="Album Art">
+        <img id="album-art" src="musics/picture1.jpg" alt="Album Art">
       </div>
       <div class="music-info">
         <h2 id="music-title">Music Title</h2>
         <p id="artist-name">Artist Name</p>
       </div>
       <div class="controls">
+        <button id="shuffle"><i class="fas fa-random"></i></button>
         <button id="prev"><i class="fas fa-backward"></i></button>
         <button id="play-pause"><i class="fas fa-play"></i></button>
         <button id="next"><i class="fas fa-forward"></i></button>
+        <button id="repeat"><i class="fas fa-redo"></i></button>
         <button id="like"><i class="far fa-heart"></i></button>
       </div>
       <div class="progress-container">
@@ -45,10 +45,6 @@
         <span id="current-time">0:00</span>
         <span id="duration">0:00</span>
       </div>
-
-      <div class="sound-wave"></div>
-
-
     </div>
   </div>
 
@@ -56,20 +52,6 @@
   <div id="lyrics-section" class="lyrics-section">
     <h3>Lyrics</h3>
     <div id="lyrics"></div>
-  </div>
-
-
-
-  <!-- Create Playlist Sidebar -->
-  <div id="create-playlist-sidebar" class="create-playlist-sidebar">
-    <span class="close-sidebar" onclick="closeCreatePlaylistSidebar()">&times;</span>
-    <h2>Create Playlist</h2>
-    <input type="text" id="Spotify" placeholder="Playlist Name">
-    <h3>Select Songs</h3>
-    <div id="song-selection">
-      <!-- Songs will be dynamically added here -->
-    </div>
-    <button id="done">Done</button>
   </div>
 
   <!-- Playlist Sidebar -->
@@ -81,6 +63,17 @@
     </div>
   </div>
 
+  <!-- Create Playlist Sidebar -->
+  <div id="create-playlist-sidebar" class="create-playlist-sidebar">
+    <span class="close-sidebar" onclick="closeCreatePlaylistSidebar()">&times;</span>
+    <h2>Create Playlist</h2>
+    <input type="text" id="playlist-name" placeholder="Playlist Name">
+    <h3>Select Songs</h3>
+    <div id="song-selection">
+      <!-- Songs will be dynamically added here -->
+    </div>
+    <button id="done">Done</button>
+  </div>
 </div>
 
 <script src="script.js"></script>
