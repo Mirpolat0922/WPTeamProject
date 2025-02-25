@@ -112,6 +112,7 @@ function formatTime(time) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
+
 // Seek Music
 function seekMusic() {
   audio.currentTime = (progress.value * audio.duration) / 100;
