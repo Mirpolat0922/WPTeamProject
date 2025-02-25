@@ -25,10 +25,6 @@ To run the project, simply open `index.html` in a web browser.
 - **CSS**: Styling and layout of the application.
 - **JavaScript**: Interactive features and functionality.
 
-### Libraries & APIs
-- **Font Awesome**: Icons for UI elements.
-- **Google Font**: Poppins for typography.
-
 ## Project Structure
 
 ### Root Directory
@@ -44,7 +40,9 @@ Contains all the main project files.
 
 ### Music Directory (`Project/musics/`)
 
-- Contains audio files used in the project.
+- **Audio Files**: Stores the music tracks.  
+- **Album Art**: Contains images associated with each song.  
+- **Lyrics Files**: Stores the lyrics for each song.  
 
 ### Source Directory (`Project/src/`)
 
@@ -55,6 +53,7 @@ Contains all the main project files.
 ## Features
 
 - **Music Playback Controls**: Play, pause, next, and previous buttons.
+- **Shuffle & Repeat**: Shuffle songs randomly and repeat a single track or the entire playlist.
 - **Dynamic Playlist Management**: Create and manage playlists.
 - **Favorite Songs**: Mark songs as favorites.
 - **Lyrics Display**: View lyrics alongside the music player.
@@ -64,12 +63,10 @@ Contains all the main project files.
 1. The user can select music from the playlist and play it.
 2. The music player displays album art, song title, and artist name.
 3. Users can navigate between tracks using playback controls.
-4. The lyrics section displays the lyrics of the current song.
-5. Users can create custom playlists and add songs to them.
-
-## License
-
-This project is open-source and free to use.
+4. The shuffle button plays songs in a random order.
+5. The repeat button can loop a single song or the entire playlist.
+6. The lyrics section displays the lyrics of the current song.
+7. Users can create custom playlists and add songs to them.
 
 ## Contributors
 
