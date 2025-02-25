@@ -1,71 +1,84 @@
-# Getting Started with Create React App
+# Music Player App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+To install and set up the project, follow these steps:
 
-In the project directory, you can run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mirpolat0922/WPTeamProject.git
+   ```
 
-### `npm start`
+2. Navigate to the project directory:
+   ```bash
+   cd Project
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the project, simply open `index.html` in a web browser.
 
-### `npm test`
+## Tech Stack Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- **HTML**: Structure of the web application.
+- **CSS**: Styling and layout of the application.
+- **JavaScript**: Interactive features and functionality.
 
-### `npm run build`
+### Libraries & APIs
+- **Font Awesome**: Icons for UI elements.
+- **Google Font**: Poppins for typography.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Root Directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `.idea/` - Project settings (IDE-related).
+- `.gitignore` - Specifies files and directories to be ignored by Git.
+- `README.md` - Project documentation.
 
-### `npm run eject`
+### Project Directory (`Project/`)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contains all the main project files.  
+- `404.html` - Custom 404 error page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Image Directory (`Project/img/`)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Stores image assets used in the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Music Directory (`Project/musics/`)
 
-## Learn More
+- Contains audio files used in the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Source Directory (`Project/src/`)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `index.html` - The main HTML file for the application.
+- `style.css` - Stylesheet for the application.
+- `script.js` - JavaScript functionality for the application.
 
-### Code Splitting
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Music Playback Controls**: Play, pause, next, and previous buttons.
+- **Dynamic Playlist Management**: Create and manage playlists.
+- **Favorite Songs**: Mark songs as favorites.
+- **Lyrics Display**: View lyrics alongside the music player.
 
-### Analyzing the Bundle Size
+## How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. The user can select music from the playlist and play it.
+2. The music player displays album art, song title, and artist name.
+3. Users can navigate between tracks using playback controls.
+4. The lyrics section displays the lyrics of the current song.
+5. Users can create custom playlists and add songs to them.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is open-source and free to use.
 
-### Advanced Configuration
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# WPTeamProject
+- **Mirpo'lat Erkinov** - Project Manager
+- **Saidjon Akramjonov** - Frontend Developer
+- **Jahongir To'lqinboyev** - UI/UX Designer
+- **Sevinch Anvarova** - Content Creator
+- **Iskandarbek Xakimov** -  Quality Assurance (QA) Engineer
