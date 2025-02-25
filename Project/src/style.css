@@ -29,7 +29,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   display: flex;
   backdrop-filter: blur(10px); /* Blur effect */
-  position: relative; 
+  position: relative;
 }
 
 .sidebar {
@@ -344,3 +344,24 @@ body {
   0%, 100% { height: 10px; }
   50% { height: 30px; }
 }
+
+.glowing-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffe1, #0044ff, #7300ff, #ff00b3);
+  background-size: 400% 400%;
+  animation: glowing 6s linear infinite;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+@keyframes glowing {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
