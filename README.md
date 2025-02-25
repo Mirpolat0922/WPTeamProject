@@ -42,10 +42,6 @@ To run the project, simply open `index.html` in a web browser.
 Contains all the main project files.  
 - `404.html` - Custom 404 error page.
 
-### Image Directory (`Project/img/`)
-
-- Stores image assets used in the project.
-
 ### Music Directory (`Project/musics/`)
 
 - Contains audio files used in the project.
