@@ -1,4 +1,4 @@
-Olam
+18000 Olam
 Sanjay
 Bilib bilmay ko'nglini og'ritgan bo'lsam
 Ayrim gaplardan ranjib ayrilgan bo'lsak
@@ -10,7 +10,6 @@ Yaxshi -yomonim ham bekor o'tgani
 Qoshinga keldim shu gapni aytgani
 Manosiz mazmunsiz qo'shiqman sensiz
 
-
 Ey gapim gapimga ulanolmaydi
 Sen bilganday meni hech kim bilolmaydi
 O'n sakkiz ming olam sen bo'lolmaydi
@@ -19,9 +18,7 @@ Borim ham yog'im ham sarsona sensiz
 Gapim gapimga ulanolmaydi
 Sen bilganday meni hech kim bilolmaydi
 O'n sakkiz ming olam sen bo'lolmaydi
-
 Borim ham yog'im ham sarsona sensiz
-
 
 Xalovatim tinchimsan darmon topganim
 Har qanday daxshatdan omon topganim
@@ -33,7 +30,6 @@ Xolu -madorim tugaguncha talpinay
 Orom topgay jonim illo poyingda
 Son sanoqsiz onlar behuda sensiz
 
-
 Ey gapim gapimga ulanolmaydi
 Sen bilganday meni hech kim bilolmaydi
 O'n sakkiz ming olam sen bo'lolmaydi
@@ -53,7 +49,6 @@ Gapim gapimga ulanolmaydi
 Sen bilganday meni hech kim bilolmaydi
 O'n sakkiz ming olam sen bo'lolmaydi
 Borim ham yog'im ham sarsona sensiz
-
 
 Gapim gapimga ulanolmaydi
 Sen bilganday meni hech kim bilolmaydi
